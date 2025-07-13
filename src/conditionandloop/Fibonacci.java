@@ -4,19 +4,20 @@ import java.util.Scanner;
 
 public class Fibonacci {
         public static void main(String[] args) {
-            int n = 7; // number of terms to print
-            int first = 0, second = 1;
+            Scanner in = new Scanner(System.in);
+            System.out.print("Enter the Number: ");
+            int n = in.nextInt();
+            int p = 0;
+            int i = 1;
+            int count = 2;
 
-            System.out.print("Fibonacci Series up to " + n + " terms: ");
-
-            for (int i = 1; i <= n; i++) {
-                System.out.print(first + " ");
-
-                // calculate next term
-                int next = first + second;
-                first = second;
-                second = next;
+            while (count <= n){
+                int temp = i;
+                i = i+p;
+                p =  temp;
+                count++;
             }
+            System.out.println(i);
         }
 
 
