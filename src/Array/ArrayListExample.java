@@ -8,6 +8,7 @@ public class ArrayListExample {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         // Syntax
+        System.out.println();
         ArrayList<Integer> list = new ArrayList<>(10);
 //        list.add(67);
 //        list.add(40);
