@@ -31,7 +31,27 @@ public class SortedMatrix {
         // run the loop till two rows are remaining
         while (rStart<(rEnd-1)){ // while this is true it will have more than two rows remaining
             int mid = rStart+(rEnd - rStart)/2;
-            if(matrix[])
+            if(matrix[mid][cMid] == target){
+                return new int[]{mid,cMid};
+            }
+            if(matrix[mid][cMid] < target){
+                rStart = mid;
+            }else{
+                rEnd = mid;
+            }
         }
+
+        // now we have two rows
+        // check whether the target is in the col of 2 rows
+        if(matrix[rStart][cMid] == target){
+            return new int[]{rStart,cMid};
+        }
+        if(matrix[rStart][cMid] == target){
+            return new int[]{rStart+1,cMid};
+        }
+        //search in 1st half
+        //search in 2nd half
+        //search in 3rd half
+        //search in 4th half
     }
 }
