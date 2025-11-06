@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MergeWithRecursion {
     public static void main(String[] args) {
         int[] arr = {5,6,9,3,2,1,4};
-                mergeSortInPlace(arr,0,arr.length);
+        mergeSortInPlace(arr,0,arr.length);
         System.out.println(Arrays.toString(arr));
     }
     static int[] mergeSort(int[] arr){
