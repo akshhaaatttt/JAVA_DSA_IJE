@@ -88,6 +88,35 @@ public class LL {
         return size;
     }
 
+    public void reverseIterate(){
+        if(head == null || head.next == null){
+            return;
+        }
+        Node prevNode = head;
+        Node currNode = head.next;
+        while(currNode != null){
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
+
+            //update
+            prevNode = currNode;
+            currNode = nextNode;
+        }
+        head.next = null;
+        head = prevNode;
+    }
+
+
+    public Node reverseRecursive(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node newHead = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+
     public static void main(String[] args) {
         LL list = new LL();
         list.addFirst("a");
@@ -100,5 +129,7 @@ public class LL {
         list.delLast();
         list.printList();
         System.out.println(list.getSize());
+        list.head = list.reverseRecursive(list.head);
+        list.printList();
     }
 }
